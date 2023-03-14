@@ -1,5 +1,9 @@
 import os
 import sys
+import platform
+
+if platform.platform() ==  'Linux-5.15.55-aufs-1-x86_64-with-glibc2.31':
+    sys.path.append("/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS")
 
 from TTS.tts.configs.shared_configs import BaseDatasetConfig
 from TTS.tts.configs.glow_tts_config import GlowTTSConfig
