@@ -18,7 +18,7 @@ from trainer import Trainer, TrainerArgs
 
 if __name__ == "__main__":
 
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         raise Exception("make sure you supply output_path, data_path and gpu num as sys arguments")
 
     output_path = sys.argv[1]
