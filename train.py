@@ -17,11 +17,13 @@ from trainer import Trainer, TrainerArgs
 
 
 if __name__ == "__main__":
+
     if len(sys.argv) != 3:
-        raise Exception("make sure you supply output_path and data_path as sys arguments")
+        raise Exception("make sure you supply output_path, data_path and gpu num as sys arguments")
 
     output_path = sys.argv[1]
     data_path = sys.argv[2]
+    os.environ["CUDA_VISIBLE_DEVICES"] = sys.argv[3]
 
     if not os.path.exists(output_path):
         os.makedirs(output_path)
@@ -37,7 +39,7 @@ if __name__ == "__main__":
         num_eval_loader_workers=4,
         run_eval=True,
         test_delay_epochs=-1,
-        epochs=100,
+        epochs=30,
         text_cleaner="phoneme_cleaners",
         use_phonemes=True,
         phoneme_language="en-us",
