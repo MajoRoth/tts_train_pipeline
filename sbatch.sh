@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:4,vmem:15g
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=60g
+#SBATCH --gres=gpu:8,vmem:15g
+#SBATCH --cpus-per-task=40
+#SBATCH --mem=100g
 #SBATCH --time=1-00:00:00
 module load cuda/11.3
 module load cudnn
