@@ -1,4 +1,5 @@
 import glob, os, sys
+from TTS.api import TTS
 
 if __name__ == "__main__":
 
@@ -9,6 +10,10 @@ if __name__ == "__main__":
 
     ckpts = sorted([f for f in glob.glob(output_path + "/*/*.pth")])
     configs = sorted([f for f in glob.glob(output_path + "/*/*.json")])
-    print(ckpts)
-    print(configs)
+    print(ckpts[0])
+    print(configs[0])
+
+    tts = TTS(model_path=ckpts[0], config_path=configs[0],
+                      progress_bar=False, gpu=False)
+    tts.tts_to_file(text="my name is amit tns thi is my tts model", file_path="output.wav")
 
