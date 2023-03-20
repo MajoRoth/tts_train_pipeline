@@ -1,4 +1,5 @@
 import glob, os, sys
+sys.path.append("/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS")
 from TTS.api import TTS
 
 if __name__ == "__main__":
