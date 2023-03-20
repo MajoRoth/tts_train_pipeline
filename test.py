@@ -5,7 +5,7 @@ from TTS.api import TTS
 if __name__ == "__main__":
 
     if len(sys.argv) != 2:
-        raise Exception("make sure you supply output_path, data_path and gpu num as sys arguments")
+        raise Exception("make sure you supply output_path as argument")
 
     output_path = sys.argv[1]
 
