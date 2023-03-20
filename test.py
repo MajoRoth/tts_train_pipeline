@@ -16,5 +16,7 @@ if __name__ == "__main__":
 
     tts = TTS(model_path=ckpts[0], config_path=configs[0],
                       progress_bar=False, gpu=False)
-    tts.tts_to_file(text="my name is amit tns thi is my tts model", file_path="output.wav")
+    tts.tts_to_file(text="my name is amit tns thi is my tts model", file_path="output1.wav")
+    tts.tts_to_file(text="What does the fox say?", file_path="output2.wav")
+    tts.tts_to_file(text="Hello world", file_path="output3.wav")
 
