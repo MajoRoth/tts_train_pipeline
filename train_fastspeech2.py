@@ -18,6 +18,11 @@ config_path = os.path.join(get_tests_output_path(), "test_model_config.json")
 output_path = os.path.join(get_tests_output_path(), "train_outputs")
 dataset_path = "/cs/dataset/Download/adiyoss/LJ/preprocessed/LJSpeech-1.1"
 
+print(" --- Configuring Training --- ")
+print("config path: {}".format(config_path))
+print("output path: {}".format(output_path))
+print("dataset path: {}".format(dataset_path))
+
 audio_config = BaseAudioConfig(
     sample_rate=22050,
     do_trim_silence=True,
@@ -61,6 +66,7 @@ config.model_args.use_speaker_embedding = False
 config.audio.trim_db = 60
 config.save_json(config_path)
 
+print(f"setting CUDA_VISIBLE_DEVICES='{get_device_id()}")
 # train the model for one epoch
 command_train = (
     f"CUDA_VISIBLE_DEVICES='{get_device_id()}'  python TTS/bin/train_tts.py --config_path {config_path}  "
@@ -77,6 +83,8 @@ run_cli(command_train)
 
 # Find latest folder
 continue_path = max(glob.glob(os.path.join(output_path, "*/")), key=os.path.getmtime)
+
+print("continue path: {}".format(continue_path))
 
 # Inference using TTS_package API
 continue_config_path = os.path.join(continue_path, "config.json")
