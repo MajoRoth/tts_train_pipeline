@@ -8,6 +8,8 @@ import platform
 if platform.platform() ==  'Linux-5.15.55-aufs-1-x86_64-with-glibc2.31':
     sys.path.append("/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS")
 
+print(sys.path)
+
 from trainer import get_last_checkpoint
 
 from tests import get_device_id, get_tests_output_path, run_cli
