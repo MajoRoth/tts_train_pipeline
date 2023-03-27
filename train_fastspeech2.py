@@ -79,7 +79,7 @@ command_train = (
     "--coqpit.datasets.0.meta_file_train metadata.csv "
     "--coqpit.datasets.0.meta_file_val metadata.csv "
     f"--coqpit.datasets.0.path {dataset_path} "
-    f"--coqpit.datasets.0.meta_file_attn_mask {dataset_path}/metadata_attn_mask.txt "
+    # f"--coqpit.datasets.0.meta_file_attn_mask {dataset_path}/metadata_attn_mask.txt "
     "--coqpit.test_delay_epochs 0"
 )
 
