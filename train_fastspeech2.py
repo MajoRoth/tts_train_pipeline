@@ -25,6 +25,7 @@ print("dataset path: {}".format(dataset_path))
 
 os.environ["CUDA_VISIBLE_DEVICES"] = 2
 
+
 audio_config = BaseAudioConfig(
     sample_rate=22050,
     do_trim_silence=True,
