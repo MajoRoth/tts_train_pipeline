@@ -71,7 +71,7 @@ config.save_json(config_path)
 print(f"setting CUDA_VISIBLE_DEVICES='{get_device_id()}")
 # train the model for one epoch
 command_train = (
-    f"CUDA_VISIBLE_DEVICES='{get_device_id()}'  python TTS/bin/train_tts.py --config_path {config_path}  "
+    f"CUDA_VISIBLE_DEVICES='{get_device_id()}'  python TTS/TTS/bin/train_tts.py --config_path {config_path}  "
     f"--coqpit.output_path {output_path} "
     "--coqpit.datasets.0.formatter ljspeech "
     "--coqpit.datasets.0.meta_file_train metadata.csv "
