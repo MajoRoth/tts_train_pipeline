@@ -8,5 +8,7 @@
 module load cuda/11.3
 module load cudnn
 source /cs/labs/adiyoss/amitroth/tts_train_pipeline/venv/bin/activate.csh
-setenv PYTHONPATH ":/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS"
+setenv PYTHONPATH "/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS"
+export PYTHONPATH="/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS"
+
 python3 train_fastspeech2.py
