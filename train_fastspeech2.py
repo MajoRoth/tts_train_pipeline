@@ -22,6 +22,11 @@ config_path = os.path.join(get_tests_output_path(), "test_model_config.json")
 output_path = os.path.join(get_tests_output_path(), "train_outputs")
 dataset_path = "/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS/tests/data/ljspeech"
 
+phoneme_cache_path = "/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS/tests/data/ljspeech/phoneme_cache/"
+f0_cache_path = "/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS/tests/data/ljspeech/f0_cache/"
+energy_cache_path = "/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS/tests/data/ljspeech/energy_cache/"
+
+
 print(" --- Configuring Training --- ")
 print("config path: {}".format(config_path))
 print("output path: {}".format(output_path))
@@ -49,11 +54,11 @@ config = Fastspeech2Config(
     text_cleaner="english_cleaners",
     use_phonemes=True,
     phoneme_language="en-us",
-    phoneme_cache_path="cache/phoneme_cache/",
-    f0_cache_path="cache/f0_cache/",
+    phoneme_cache_path=phoneme_cache_path,
+    f0_cache_path=f0_cache_path,
     compute_f0=True,
     compute_energy=True,
-    energy_cache_path="cache/energy_cache/",
+    energy_cache_path=energy_cache_path,
     run_eval=True,
     test_delay_epochs=-1,
     epochs=1,
