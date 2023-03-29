@@ -100,6 +100,8 @@ continue_config_path = os.path.join(continue_path, "config.json")
 continue_restore_path, _ = get_last_checkpoint(continue_path)
 out_wav_path = os.path.join(get_tests_output_path(), "output.wav")
 
+print("out wav path: {}".format(out_wav_path))
+
 # Check integrity of the config
 with open(continue_config_path, "r", encoding="utf-8") as f:
     config_loaded = json.load(f)
@@ -112,6 +114,6 @@ inference_command = f"CUDA_VISIBLE_DEVICES='{8}' tts --text 'This is an example.
 run_cli(inference_command)
 
 # restore the model and continue training for one more epoch
-command_train = f"CUDA_VISIBLE_DEVICES='{8}' python TTS/bin/train_tts.py --continue_path {continue_path} "
+command_train = f"CUDA_VISIBLE_DEVICES='{8}' python TTS/TTS/bin/train_tts.py --continue_path {continue_path} "
 run_cli(command_train)
 shutil.rmtree(continue_path)
