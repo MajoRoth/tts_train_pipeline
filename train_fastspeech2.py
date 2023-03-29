@@ -20,7 +20,7 @@ from TTS.tts.configs.fastspeech2_config import Fastspeech2Config
 
 config_path = os.path.join(get_tests_output_path(), "test_model_config.json")
 output_path = os.path.join(get_tests_output_path(), "train_outputs")
-dataset_path = "/cs/dataset/Download/adiyoss/LJ/preprocessed/LJSpeech-1.1"
+dataset_path = "/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS/tests/data/ljspeech"
 
 print(" --- Configuring Training --- ")
 print("config path: {}".format(config_path))

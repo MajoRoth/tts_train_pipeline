@@ -10,6 +10,4 @@ module load cudnn
 source /cs/labs/adiyoss/amitroth/tts_train_pipeline/venv/bin/activate.csh
 export PYTHONPATH="/cs/labs/adiyoss/amitroth/tts_train_pipeline/TTS"
 
-pip uninstall nvidia_cublas_cu11
-
 python3 train_fastspeech2.py
