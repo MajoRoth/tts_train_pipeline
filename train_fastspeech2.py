@@ -108,10 +108,10 @@ assert config_loaded["output_path"] in continue_path
 assert config_loaded["test_delay_epochs"] == 0
 
 # Load the model and run inference
-inference_command = f"CUDA_VISIBLE_DEVICES='{get_device_id()}' tts --text 'This is an example.' --config_path {continue_config_path} --model_path {continue_restore_path} --out_path {out_wav_path}"
+inference_command = f"CUDA_VISIBLE_DEVICES='{8}' tts --text 'This is an example.' --config_path {continue_config_path} --model_path {continue_restore_path} --out_path {out_wav_path}"
 run_cli(inference_command)
 
 # restore the model and continue training for one more epoch
-command_train = f"CUDA_VISIBLE_DEVICES='{get_device_id()}' python TTS/bin/train_tts.py --continue_path {continue_path} "
+command_train = f"CUDA_VISIBLE_DEVICES='{8}' python TTS/bin/train_tts.py --continue_path {continue_path} "
 run_cli(command_train)
 shutil.rmtree(continue_path)
