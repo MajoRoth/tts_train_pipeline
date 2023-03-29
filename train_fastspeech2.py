@@ -47,7 +47,7 @@ audio_config = BaseAudioConfig(
 
 config = Fastspeech2Config(
     audio=audio_config,
-    batch_size=8,
+    batch_size=48,
     eval_batch_size=8,
     num_loader_workers=0,
     num_eval_loader_workers=0,
