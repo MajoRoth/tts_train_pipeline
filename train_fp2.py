@@ -17,7 +17,7 @@ dataset_config = BaseDatasetConfig(
     formatter="ljspeech",
     meta_file_train="metadata.csv",
     # meta_file_attn_mask=os.path.join(output_path, "../LJSpeech-1.1/metadata_attn_mask.txt"),
-    path=os.path.join(output_path, "../LJSpeech-1.1/"),
+    path="/cs/dataset/Download/adiyoss/LJ/preprocessed/LJSpeech-1.1",
 )
 
 audio_config = BaseAudioConfig(
