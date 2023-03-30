@@ -11,6 +11,7 @@ from TTS.utils.audio import AudioProcessor
 from TTS.utils.manage import ModelManager
 
 output_path = os.path.dirname(os.path.abspath(__file__))
+os.environ["CUDA_VISIBLE_DEVICES"] = 8
 
 # init configs
 dataset_config = BaseDatasetConfig(
