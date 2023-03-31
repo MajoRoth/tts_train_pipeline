@@ -10,7 +10,10 @@ from TTS.tts.utils.text.tokenizer import TTSTokenizer
 from TTS.utils.audio import AudioProcessor
 from TTS.utils.manage import ModelManager
 
-output_path = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "output"
+                           )
 os.environ["CUDA_VISIBLE_DEVICES"] = "8"
 
 # init configs
