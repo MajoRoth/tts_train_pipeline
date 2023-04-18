@@ -26,7 +26,7 @@ dataset_config = BaseDatasetConfig(
     formatter="ljspeech",
     meta_file_train="metadata.csv",
     # meta_file_attn_mask=os.path.join(output_path, "../LJSpeech-1.1/metadata_attn_mask.txt"),
-    path="/Users/amitroth/Documents/LJSpeech-1.1",
+    path="/cs/labs/adiyoss/amitroth/tts_train_pipeline/LJSpeech-1.1",
 )
 
 audio_config = BaseAudioConfig(
