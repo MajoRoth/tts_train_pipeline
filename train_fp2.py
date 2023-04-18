@@ -19,7 +19,7 @@ output_path = os.path.join(
 
 print(sys.path)
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 # init configs
 dataset_config = BaseDatasetConfig(
