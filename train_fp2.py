@@ -12,7 +12,6 @@ from TTS.utils.audio import AudioProcessor
 from TTS.utils.manage import ModelManager
 
 
-
 output_path = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     "output"
@@ -27,6 +26,7 @@ dataset_config = BaseDatasetConfig(
     formatter="ljspeech",
     meta_file_train="metadata.csv",
     # meta_file_attn_mask=os.path.join(output_path, "../LJSpeech-1.1/metadata_attn_mask.txt"),
+    #path="/Users/amitroth/PycharmProjects/TTS_playground/LJSpeech-1.1",
     path="/cs/labs/adiyoss/amitroth/tts_train_pipeline/LJSpeech-1.1",
 )
 
@@ -48,8 +48,8 @@ config = Fastspeech2Config(
     audio=audio_config,
     batch_size=32,
     eval_batch_size=16,
-    num_loader_workers=72,  ## CHECK NUM OF WORKERS
-    num_eval_loader_workers=16,
+    num_loader_workers=0,  ## CHECK NUM OF WORKERS
+    num_eval_loader_workers=0,
     compute_input_seq_cache=True,
     compute_f0=True,
     f0_cache_path=os.path.join(output_path, "f0_cache"),
@@ -110,4 +110,6 @@ model = ForwardTTS(config, ap, tokenizer, speaker_manager=None)
 trainer = Trainer(
     TrainerArgs(), config, output_path, model=model, train_samples=train_samples, eval_samples=eval_samples
 )
+
+print(f"gpus: {trainer.num_gpus}")
 trainer.fit()
